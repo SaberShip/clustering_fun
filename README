@@ -1,0 +1,22 @@
+Usage:
+  python3 clustering_fun.py -k={clusters} [options] [/path/to/input/file.csv]
+
+    Options:
+      -k={value} (Required, number of clusters 1 to 1000)
+      -n={value} (Number of points to gaussian generate if no CSV file is provided)
+      -l={value} (Optional limit on distance from center to a location being classified in km)
+      -p (plot output)
+      -v (verbose output)
+
+    If a csv file is not provided, the number of points must be specified with -n={value}
+    If a csv file is provided then the -n option is ignored
+
+
+
+Example run:
+  ./clustering_fun.py -v -p -n=5000 -k=5 -l=2500
+  
+  This will create 5 clusters with a total of 5000 points with gaussian distribution
+  The -v will run the clustering with verbose output
+  The -p will plot initial cluster positions as well as final cluster centers in separate images
+  The -l limits the maximum classification distance of a point to 2500km
